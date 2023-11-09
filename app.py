@@ -1,36 +1,37 @@
 import random
 
-choice = ['rock', 'paper', 'scissors']
+score = 0
+rounds_played = 0
 
-def get_user_choice():
-    user_input = input('Enter your choice: ').lower()
-    while user_input not in choice:
-        print("Select a valid choice:")
-        user_input = input('Enter your choice ' + str(choice) + ": " ).lower()
-    return user_input
+while True:
+    user_input = input("Select rock, paper or scissors: ").lower()
+    print("User choice is " + user_input)
+    options = ["rock", "paper", "scissors"]
+    computer_choice = random.choice(options).lower()
+    print("Computer choice is " + computer_choice)
 
-print("Your choice is: " + get_user_choice())
+    if user_input not in options:
+        print("Invalid input. Try again.")
+        continue
 
-def get_computer_choice():
-    computer_input = random.choice(choice)
-    return computer_input
+    if user_input == computer_choice:
+        print("It's a draw!")
+        rounds_played += 1
 
-print("Computer choice is: " + get_computer_choice())
+    elif user_input == "rock" and computer_choice == "scissors" or \
+            user_input == "paper" and computer_choice == "rock" or \
+            user_input == "scissors" and computer_choice == "paper":
+        print("You win!")
+        score += 1
+        rounds_played += 1
 
-def determine_winner(user_choice, computer_choice):
-    if user_choice == computer_choice:
-        return "It's a tie"
-    elif user_choice == 'rock' and computer_choice == 'scissors' or \
-        user_choice == 'paper' and computer_choice == 'rock' or \
-        user_choice == 'scissors' and computer_choice == 'paper':
-        return "You won"
     else:
-        return "Computer Won"
-    
+        print("You lose!")
+        rounds_played += 1
 
-def play_game():
-    user_choice = get_user_choice()
-    computer_choice = get_computer_choice()
-    print(determine_winner(user_choice,computer_choice))
+        play_again = input("Do you want to play again? (y/n): ").lower()
+        if play_again != "y":
+            print("You played " + str(rounds_played) + " rounds and your score is " + str(score))
+            break
 
-play_game()
+        
