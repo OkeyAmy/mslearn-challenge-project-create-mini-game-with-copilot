@@ -1,7 +1,4 @@
-from calendar import c
 import random
-from re import U
-from turtle import end_fill
 
 choice = ['rock', 'paper', 'scissors']
 
