@@ -1,5 +1,8 @@
 import random
 
+user_name = input("Enter your name: ")
+print("Hello " +user_name + "\n Welcome to Rock Paper Scissors game!")
+
 score = 0
 rounds_played = 0
 
@@ -31,7 +34,7 @@ while True:
 
         play_again = input("Do you want to play again? (y/n): ").lower()
         if play_again != "y":
-            print("You played " + str(rounds_played) + " rounds and your score is " + str(score))
+            print(user_name + "\nYou played " + str(rounds_played) + " rounds and your score is " + str(score))
             break
 
         
