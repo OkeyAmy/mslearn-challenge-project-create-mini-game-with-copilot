@@ -1,6 +1,7 @@
 import random
 
 user_name = input("Enter your name: ")
+user_name = user_name.capitalize()
 print("Hello " +user_name + "\nWelcome to Rock Paper Scissors game!")
 
 score = 0
