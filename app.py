@@ -1,7 +1,7 @@
 import random
 
 user_name = input("Enter your name: ")
-print("Hello " +user_name + "\n Welcome to Rock Paper Scissors game!")
+print("Hello " +user_name + "\nWelcome to Rock Paper Scissors game!")
 
 score = 0
 rounds_played = 0
